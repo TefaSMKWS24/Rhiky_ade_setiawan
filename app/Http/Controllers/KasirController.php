@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class KasirController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('supplier.index');
+        return view('kasir.index');
     }
 
     /**

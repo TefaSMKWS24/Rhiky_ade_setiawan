@@ -11,7 +11,7 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        //
+        return view('pelanggan.index');
     }
 
     /**
