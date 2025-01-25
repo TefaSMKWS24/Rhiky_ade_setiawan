@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_kategoris', function (Blueprint $table) {
-            $table->id();
+        Schema::create('data_kategori', function (Blueprint $table) {
+            $table->string('kode_kategori', 6)->unique()->primary();
+            $table->string('nama_kategori', 15);
+            $table->string('supplier', 20);
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_kategoris');
+        Schema::dropIfExists('data_kategori');
     }
 };
