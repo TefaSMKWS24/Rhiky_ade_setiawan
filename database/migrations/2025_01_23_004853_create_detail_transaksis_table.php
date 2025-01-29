@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('detail_transaksi', function (Blueprint $table) {
             $table->string('kode_kasir', 6)->unique()->primary();
             $table->string('kode_barang', 6);
-            $table->bigInteger('qty');
-            $table->bigInteger('total_belanja');
+            $table->bigInteger('jumlah');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }

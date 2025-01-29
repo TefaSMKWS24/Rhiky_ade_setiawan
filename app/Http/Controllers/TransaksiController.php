@@ -37,6 +37,7 @@ class TransaksiController extends Controller
             'kode_barang' => 'required',
             'kode_pelanggan' => 'required',
             'total_belanja' => 'required',
+            'total' => 'required',
         ]);
 
         $datatransaksi = ([
@@ -48,7 +49,16 @@ class TransaksiController extends Controller
             'total_belanja' => $request->total_belanja,
         ]);
 
-        DB::table('transaksi')->insert($datatransaksi);
+        $datadetail = [
+            'kode_transaksi' => $request->kode_transaksi,
+            'kode_barang' => $request->kode_barang,
+            'jumlah' => $request->jumlah,
+            'total' => $request->total,
+            
+        ]
+
+        DB::table('transaksi')->insert($data);
+        DB::table('detail_transaksi')->insert($data);
         return redirect()->route('transaksi.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
