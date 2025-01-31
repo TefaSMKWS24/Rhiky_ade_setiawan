@@ -66,10 +66,12 @@ class PelangganController extends Controller
             'nama_pelanggan' => $request->nama_pelanggan,
             'nohp' => $request->nohp,
         ];
-    };
-        DB::table('pelanggan')->where('kode_pelanggan', $id)->update($data);
-        return redirect()->route('pelanggan.index');
 
+
+        DB::table('pelanggan')->where('kode_pelanggan', $id)->update($data);
+        return Redirect::route('pelanggan.index');
+
+    }
 
     /**
      * Remove the specified resource from storage.

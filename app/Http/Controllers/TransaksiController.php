@@ -54,8 +54,8 @@ class TransaksiController extends Controller
             'kode_barang' => $request->kode_barang,
             'jumlah' => $request->jumlah,
             'total' => $request->total,
-            
-        ]
+
+        ];
 
         DB::table('transaksi')->insert($data);
         DB::table('detail_transaksi')->insert($data);
