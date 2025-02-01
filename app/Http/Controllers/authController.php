@@ -4,35 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class authController extends Controller
-
+class AuthController extends Controller
 {
-  public function loginkasir(request $request)
-  {
-
-  if(Auth:guard('kasir')->attempt([
-      'nik' => $request->nis,
-      'password' => $request->password
-  ]))
-
-  {
-     dd('berhasil' ,auth::guard('kasir')->user());
-     log::info('berhasil successful');
-     //return redirect('/user/dashboard');
-
-  }
-  else{
-      echo"login gagal";
-      //return redirect('/user')->with('warning','nis./password salah');
-  }
-
-}
-
-  public function logoutkasir()
-  {
-    if(auth::guard('kasir')->check())
-      auth::guard('kasir')->logout();
-      return redirect('/');
-  }
-
+    public function loginkasir(Request $request)
+    {
+        if(Auth::guard('kasir')->attempt([
+                                    'nik' => $request->nis,
+                                    'password' => $request->password]))
+        {
+            dd('Berhasil: '.Auth::guard('kasir')->user());
+            Log::info('Login successful');
+            //return redirect('/user/dashboard');
+        }
+        else{
+            echo "Login Gagal";
+            //return redirect('/user')->with('warning', 'NIS / Password Salah!');
+        }
+    }
+    public function logoutkasir()
+    {
+        if(Auth::guard('kasir')->check()){
+            Auth::guard('kasir')->logout();
+            return redirect('/');
+        }
+    }
 }
