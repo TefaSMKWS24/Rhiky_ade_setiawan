@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 // GUEST (sebelum login)
 Route::middleware(['guest:kasir'])->group(function () {
- Route::get('/kasir', function () {return view('auth.loginkaisir');})->name('loginkasir');
+ Route::get('/kasir', function () {return view('auth.loginkasir');})->name('loginkasir');
  Route::post('/loginkasir', [AuthController::class, 'loginkasir']);
 });
 
@@ -48,9 +48,9 @@ Route::middleware(['guest:admin'])->group(function () {
     Route::get('/admin/dashboard', [DashbordadminController::class, 'dashboard']);
     Route::get('/admin/logout', [AuthController::class, 'logoutadmin']);
 
-    Route::resource('barang', BarangController::class);
-    Route::resource('kasir', KasirController::class);
-    Route::resource('kategori', kategoriController::class);
-    Route::resource('transaksi', TransaksiController::class);
-    Route::resource('pelanggan', PelangganController::class);
+    // Route::resource('barang', BarangController::class);
+    // Route::resource('kasir', KasirController::class);
+    // Route::resource('kategori', kategoriController::class);
+    // Route::resource('transaksi', TransaksiController::class);
+    // Route::resource('pelanggan', PelangganController::class);
 });

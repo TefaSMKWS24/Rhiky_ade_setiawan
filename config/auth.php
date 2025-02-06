@@ -82,6 +82,8 @@ return [
             'model' => App\Models\data_kasir::class,
         ],
 
+
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
