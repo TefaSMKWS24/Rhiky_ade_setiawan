@@ -18,7 +18,7 @@ class KasirSeeder extends Seeder
             [
                 'kode_kasir' => 'KS01',
                 'nama_kasir' => 'Kasir 1',
-                'password' => Hash::make('1234'),
+                'password' => Hash::make('2121'),
             ],
         ];
 
