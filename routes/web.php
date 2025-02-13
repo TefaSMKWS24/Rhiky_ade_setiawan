@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\http\controllers\GuestController;
 use App\http\controllers\AuthController;
+
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\kategoriController;
