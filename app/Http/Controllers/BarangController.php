@@ -70,17 +70,21 @@ class BarangController extends Controller
             'kode_kategori' => $request->kode_kategori,
         ];
 
-        DB::table('barang')->where('kode_barang', $id)->update($data);
-        return redirect()->view('barang.index');
-    }
+        DB::table('barang')->where('id', $id)->update($data);
+        return redicet()->view('barang.index',);
+        }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        DB::table('barang')->where('kode_barang', $id)->delete();
-        return redirect()->view('barang.index');
+
+        Db::table('barang')->where('id', $id)->delete();
+        return redirect()->route('barang.index');
 
     }
 }
+
+

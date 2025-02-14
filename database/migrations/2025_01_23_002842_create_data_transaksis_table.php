@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('kode_kasir', 6);
             $table->string('kode_barang', 6);
             $table->string('kode_pelanggan', 6);
-            //$table->integer('total_belanja', 6)->nullable();
+            //$table->bigInteger('total_belanja', 6)nullable();
             $table->timestamps();
         });
     }

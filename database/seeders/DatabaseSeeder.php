@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-   $this->call([
-       adminSeeder::class,
-       kasirSeeder::class,
-   ]);
+        $this->call([
+            adminseeder::class,
+            kasirseeder::class
+        ]);
     }
 }

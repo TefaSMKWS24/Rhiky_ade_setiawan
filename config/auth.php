@@ -41,17 +41,15 @@ return [
             'provider' => 'users',
         ],
 
+        'kasir' => [
+            'driver' => 'session',
+            'provider' => 'kasirs',
+        ],
 
-            'kasir' => [
-                'driver' => 'session',
-                'provider' => 'kasirs',
-            ],
-
-            'admin' => [
-                'driver' => 'session',
-                'provider' => 'users',
-            ],
-
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -81,8 +79,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\data_kasir::class,
         ],
-
-
 
         // 'users' => [
         //     'driver' => 'database',
