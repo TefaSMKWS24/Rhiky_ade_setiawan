@@ -35,9 +35,9 @@ class AuthController extends Controller
                                     'email' => $request->email,
                                     'password' => $request->password]))
         {
-            dd('Berhasil: '.Auth::guard('admin')->user());
-            Log::info('Login successful');
-            //return redirect('/user/dashboard');
+            //dd('Berhasil: '.Auth::guard('admin')->user());
+            //Log::info('Login successful');
+            return redirect('/admin/barang');
         }
         else{
             echo "Login Gagal";
